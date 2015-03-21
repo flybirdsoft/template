@@ -1,0 +1,229 @@
+﻿@charset "utf-8";
+/* write by wuweiwei */
+.desk { }
+.desk .circleGraph { overflow: hidden; height: auto; }
+.desk .circleGraph-box { /*width:250px;*/ width: 95%; height: 220px; background: #FFF; }
+.desk .circleGraph-box .circle { width: 60%; height: 60%; margin: 0 auto; margin-top: 25px; }
+.desk .circleGraph-box .text { text-align: center; margin-top: 10px; }
+.desk .app, .desk .service { background: #FFF; margin-top: 20px; overflow: hidden; }
+.desk .app-title { margin-left: 20px; font-size: 14px; color: #000; font-weight: bold; height: 42px; line-height: 42px; }
+.desk .app-create { position: relative; width: 163px; height: 148px; border: 1px dashed #d6e1ed; margin-left: 20px; cursor: pointer; margin-bottom: 20px; }
+.desk .app-create:hover { border-color: #f85549; }
+.desk .app-create:hover .app-create-hline, .desk .app-create:hover .app-create-vline { background: #f85549; }
+.desk .app-create-hline { position: absolute; margin: 60px auto; width: 50px; height: 4px; background: #d6e1ed; top: 0; left: 58px; }
+.desk .app-create-vline { position: absolute; margin: 36px auto; width: 4px; height: 50px; background: #d6e1ed; top: 0; left: 80px; }
+.desk .app-create-text { width: 90px; font-weight: bold; margin: 102px auto; text-align: center; color: #9ca9b6; }
+.desk .app-myapp { position: relative; width: 163px; height: 148px; border: 1px solid #d6e1ed; margin-left: 20px; cursor: pointer; margin-bottom: 20px; }
+.desk .app-myapp:hover { border-color: #f85549; }
+.desk .app-myapp-shared { width: 26px; height: 16px; float: right; margin-top: 10px; margin-right: 10px; color: #9ca9b6; }
+.desk .app-myapp-photo { width: 50px; height: 50px; border-radius: 10px; clear: both; margin: 5px auto; }
+.desk .app-myapp-photo img { width: 40px; height: 40px; border-radius: 10px; border: none; }
+.desk .app-myapp-caption { height: 18px; line-height: 18px; color: #333333; text-align: center; font-size: 14px; margin-bottom: 10px; }
+.desk .app-myapp-imagelist img { width: 40px; height: 40px; text-align: center; }
+.desk .app-myapp-op { margin-top: 23px; border-top: 1px solid #d6e1ed; }
+.desk .app-myapp-op span { background-image: url(../images/desk/baseSevice-icon.png); }
+.desk .app-myapp-op .stateText { width: 26px; height: 26px; text-align: center; line-height: 26px; vertical-align: middle; }
+/*开始（三角形）样式*/
+.desk .app-myapp-op .begin, .desk .app-myapp-op .begin_cur { width: 26px; height: 26px; border-right: 1px solid #d6e1ed; }
+.desk .app-myapp-op .begin span { display: block; margin-top: 7px; margin-left: 7px; width: 12px; height: 12px; background-position: 2px 1px; }
+.desk .app-myapp-op .begin_cur span { display: block; margin-top: 7px; margin-left: 7px; width: 12px; height: 12px; background-position: -10px 1px; }
+/*停止（正方形）样式*/
+.desk .app-myapp-op .stop, .desk .app-myapp-op .stop_cur { width: 26px; height: 26px; border-right: 1px solid #d6e1ed; }
+.desk .app-myapp-op .stop span { display: block; margin-top: 8px; margin-left: 7px; width: 12px; height: 12px; background-position: -21px 0; }
+.desk .app-myapp-op .stop_cur span { display: block; margin-top: 8px; margin-left: 7px; width: 12px; height: 12px; background-position: -33px 0; }
+/*设置样式*/
+.desk .app-myapp-op .set { width: 23px; height: 26px; }
+.desk .app-myapp-op .set span { display: block; margin-top: 5px; margin-left: 7px; width: 16px; height: 16px; background-position: -34px 17px; }
+/*关闭样式*/
+.desk .app-myapp-op .close { width: 26px; height: 26px; }
+.desk .app-myapp-op .close span { display: block; margin-top: 5px; margin-left: 7px; width: 16px; height: 16px; background-position: -17px 17px; }
+.desk .app-myapp-op .close_cur { width: 26px; height: 26px; }
+.desk .app-myapp-op .close_cur span { display: block; margin-top: 5px; margin-left: 7px; width: 16px; height: 16px; background-position: 0 17px; }
+.desk .other { height: 110px; overflow: hidden; background: #FFF; margin-top: 20px; margin-bottom: 20px; }
+/*箭头 begin*/
+.desk .arrow { width: 250px; height: 50px; overflow: hidden; position: relative; margin-left: 20px; }
+.desk .arrow .backbox { width: 220px; height: 50px; background: #f0f4f8; }
+.desk .arrow .arrow-big { position: absolute; left: 220px; top: 0; width: 0px; height: 0px; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 25px solid #f0f4f8; }
+.desk .arrow .box { position: absolute; top: 7px; left: 7px; width: 210px; height: 36px; background: #d6e1ed; }
+.desk .arrow .arrow-samll { position: absolute; left: 217px; top: 7px; width: 0px; height: 0px; border-top: 18px solid transparent; border-bottom: 18px solid transparent; border-left: 18px solid #d6e1ed; }
+.desk .arrow .text { position: absolute; top: 0; left: 27px; vertical-align: middle; line-height: 50px; height: 50px; }
+.desk .arrow .icon { }
+/*箭头 end*/
+
+.desk .V_box { background: #FFF; padding: 20px; }
+.desk .V_box-options { /*overflow:hidden;*/ }
+.desk .V_box-options-find { border: 1px solid #d6e1ee; height: 20px; width: 193px; border-radius: 3px; overflow: hidden; padding-left: 25px; background: url(../images/desk/versionManage-icons-find.png) no-repeat #f8fafb; background-position: 5px 0px; margin-top: 9px; }
+.desk .V_box-options-find input { background: #f8fafb; border: none; height: 20px; line-height: 20px; padding: 0px; outline: none; }
+/*对话框内容 begin */
+.Dialog_deskApp .Dialog_deskApp-btn { width: 200px; height: 60px; text-align: center; line-height: 60px; border: 1px dashed #2492ee; margin-top: 20px; cursor: pointer; }
+.Dialog_deskApp .Dialog_deskApp-btn a { display: block; height: 100%; width: 100%; color: #000; text-decoration: none; }
+.Dialog_deskApp .Dialog_deskApp-btn:hover { background: #2492ee; color: #FFF; font-weight: bold; }
+.Dialog_deskApp .Dialog_deskApp-btn:hover a { display: block; height: 100%; width: 100%; color: #FFF; text-decoration: none; }
+.Dialog_deskApp .Dialog_deskApp-btn1 { margin-left: 20px; }
+.Dialog_deskApp .Dialog_deskApp-btn2 { margin-right: 20px; }
+.Dialog_deskApp .Dialog_deskApp-memo { padding: 20px; line-height: 20px; height: auto; }
+/*对话框内容  end  */
+
+/*表格 begin */
+.grid { border: 1px solid #d6e1ed; overflow: hidden; height: auto; }
+.grid .header { height: 30px; line-height: 30px; background: #e9eef3; font-weight: bold; }
+.grid .header div { height: 30px; line-height: 30px; float: left; }
+.grid .rows { height: 28px; line-height: 28px; }
+.grid .rows div { height: 28px; line-height: 28px; float: left; }
+.grid .odd { background: #FFF; }
+.grid .even { background: #f4f6f9; }
+.grid .align-left { text-align: left; }
+.grid .align-center { text-align: center; }
+.grid .align-right { text-align: right; }
+.grid .num-color { color: #3c9aef; }
+.page { height: 20px; line-height: 20px; margin-top: 15px; }
+.page .pageInfo { width: auto; float: right; height: 100%; }
+.page .next { width: 18px; height: 18px; border-radius: 3px; border: 1px solid #c8d4e1; text-align: center; color: #6985a2; cursor: pointer; font-family: "宋体" }
+.page .first { width: 18px; height: 18px; border-radius: 3px; border: 1px solid #c8d4e1; color: #6985a2; cursor: pointer; text-align: center; font-family: "宋体" }
+.page .page-number { margin-left: 10px; margin-right: 10px; }
+.page .page-number span { cursor: pointer; color: #6985a2; }
+.pageAll{ margin-right:10px; color:#555;}
+/*表格  end  */
+.desk .baseInfo { overflow: hidden; }
+.desk .baseInfo .instance { padding: 20px; overflow: hidden; height: 175px; }
+.desk .baseInfo .instance-labels { height: 30px; overflow: hidden; overflow-y: auto; }
+.desk .baseInfo .instance-icon { width: 80px; height: 80px; overflow: hidden; }
+.desk .baseInfo .instance-icon img { width: 80px; height: 80px; border-radius: 15px; }
+.desk .baseInfo .instance-text { height: 80px; width: auto; margin-left: 20px; }
+.desk .baseInfo .instance-text-title { font-size: 16px; font-weight: bold; height: 45px; line-height: 45px; }
+.desk .baseInfo .instance h1 { overflow: hidden; }
+.desk .baseInfo .instance-text-green { width: 16px; height: 16px; background-image: url(../images/desk/desk-icons.png); background-position: -64px 0; margin-right: 5px; }
+.desk .baseInfo .instance-text-red { width: 14px; height: 16px; background-image: url(../images/desk/desk-icons.png); background-position: -96px 0; margin-right: 5px; margin-left: 15px; }
+.desk .baseInfo .instance-arcBtn { width: 18px; height: 18px; background-image: url(../images/desk/baseInfo-icons.png); margin-top: 15px; margin-left: 5px; margin-right: 5px; cursor: pointer; }
+.desk .baseInfo .instance-deleteBtn { width: 18px; height: 18px; background-image: url(../images/desk/baseInfo-icons.png); background-position: -18px 0; margin-top: 15px; margin-left: 5px; margin-right: 5px; cursor: pointer; }
+.desk .baseInfo .editBtn { width: 18px; height: 18px; background-image: url(../images/desk/baseInfo-icons.png); background-position: -36px 0; cursor: pointer; }
+.desk .baseInfo .instance-hline { border-bottom: 1px solid #d6e1ee; margin-top: 20px; clear: both; height: 20px; }
+.desk .baseInfo .instance-labelTitle { height: 35px; line-height: 35px; margin-top: 10px; font-weight: bold; }
+.desk .baseInfo .config { margin-top: 20px; background: #FFF; height: 125px; overflow: hidden; padding: 20px; }
+.desk .baseInfo .title { height: 20px; line-heght: 20px; font-weight: bold; font-size: 16px; }
+.desk .baseInfo .hline { clear: both; border-bottom: 1px solid #D6E1EE; height: 10px; }
+.desk .baseInfo .config-counter { width: 30%; height: 90px; overflow: hidden; }
+.desk .baseInfo .config-counter-title { font-size: 14px; height: 40px; line-height: 40px; }
+.desk .baseInfo #counter_1, .desk .baseInfo #counter_2, .desk .baseInfo #counter_3 { padding-right: 30px; }
+.desk .baseInfo .wUpDown { border: 1px solid #D6E1EE; border-radius: 5px; background: #F9FAFB; height: 48px; }
+.desk .baseInfo .wUpDown .wValue { font-size: 20px; color: #94A2B0; margin-left: 10px; }
+.desk .baseInfo .wUpDown .wUpBtn { background-image: url(../images/desk/baseInfo-updown-up.png); background-repeat: no-repeat; background-position: 30% center; }
+.desk .baseInfo .wUpDown .wDownBtn { background-image: url(../images/desk/baseInfo-updown-down.png); background-repeat: no-repeat; background-position: 30% center; }
+.desk .baseInfo .info { margin-left: 20px; height: 358px; padding: 20px; overflow: hidden; border: 1px solid #FFF; }
+.desk .baseInfo .dotLine { border-top: 1px dashed #D6E1EE; height: 0px; }
+.desk .baseInfo .info-line { height: 30px; line-height: 30px; overflow: hidden; }
+.desk .baseInfo .info-textarea-line { margin-top: 7px; }
+.desk .baseInfo .info-line-label { font-weight: bold; width: 20%; text-align: right; width: 55px; }
+.desk .baseInfo .info-line-text { height: 138px; padding-left: 20px; overflow: hidden; overflow-y: auto; line-height: 25px; }
+.desk .workflow { padding: 20px; margin-top: 20px; background: #FFF; }
+.desk .workflow .title { height: 20px; line-heght: 20px; font-weight: bold; font-size: 16px; }
+.desk .workflow .hline { clear: both; border-bottom: 1px solid #D6E1EE; height: 10px; }
+/*application edited status*/
+.overlay { width: 100%; height: 100%; opacity: 0; }
+.switch { left: -35px; position: absolute; }
+.desk .baseInfo .editBox { height: 18px; }
+.desk .baseInfo .editBox .app-cancel { background: #7997b5; color: #ffffff; border: 1px solid #7997b5; border-radius: 2px; }
+.desk .baseInfo .editBox .app-save { background: #f3695f; color: #ffffff; border: 1px solid #f3695f; border-radius: 2px; }
+.desk .baseInfo .info-line-text input[type="text"], .desk .baseInfo .info-line-text textarea { overflow: hidden; background: #F9FAFB; border: 1px solid #D6E1EE; border-radius: 5px; padding-left: 10px; width: 300px; }
+.desk .baseInfo .info-line-text textarea { width: 400px; }
+/*create app*/
+.desk .create-app { background: #FFF; padding: 0 8px 0 8px; }
+.desk .create-app .selected { border-color: #f3695f; border-width: 2px; }
+/*
+.desk .create-app .header {
+	font-weight: bold;
+	font-size: 16px;
+	padding: 6px 0 6px 4px;
+}
+*/
+.desk .create-app .hline { border-bottom: 1px solid #d6e1ee; margin-top: 2px; clear: both; }
+.desk .create-app .flow { height: 90px; padding: 30px 0 0px 0; color: #888; }
+.desk .create-app .flow .text { width: 600px; margin: 0 auto; overflow: hidden; margin-top: 10px; }
+.desk .create-app .flow .text div { position: relative; }
+.desk .create-app .container { margin-top: 8px; }
+.desk .create-app .field { height: 30px; margin: 10px 0 15px 0; }
+.desk .create-app .area { height: 130px; }
+.desk .create-app .field label { float: left; width: 80px; }
+.desk .create-app .field .item { border: 1px solid #d6e1ee; padding: 5px 10px 5px 10px; border-radius: 10px; font-weight: bold; margin-right: 10px; cursor: pointer; }
+.desk .create-app .field .item-select { border: 2px solid #F85549; padding: 5px 10px 5px 10px; border-radius: 10px; font-weight: bold; cursor: pointer; }
+.desk .create-app input, .desk .create-app textarea { border: 1px solid #d6e1ee; padding: 5px; border-radius: 5px; background: #FFFBFf; }
+.desk .create-app textarea { width: 90%; resize: none; }
+.desk .create-app .container .action { margin-top: 25px; padding-left: 200px; text-align: center; padding-right: 200px; }
+.desk .create-app .container .action a { height: 25px; margin-right: 15px; }
+.desk .create-app .container .action .create-app-confirm { background: #f3695f; border: 1px solid #f3695f; }
+.desk .create-app .container .action .create-app-next { background: #7997b5; border: 1px solid #7997b5; }
+.desk .create-app .container .action .create-app-back { background: #7997b5; border: 1px solid #7997b5; }
+.desk .create-app { margin-top: 0px; overflow: hidden; padding-bottom: 20px; padding-left: 20px; }
+.desk .create-app .header { font-size: 16px; font-weight: bold; height: 40px; line-height: 40px; }
+.desk .create-app .step3-form { height: auto; overflow: hidden; }
+.desk .create-app .step3-form .form-line { height: 55px; line-height: 20px; }
+.desk .create-app .step3-form .form-line label { display: block; width: 55px; }
+.desk .create-app .step3-form .form-line .text { overflow: hidden; padding-left: 20px; }
+.desk .create-app .step3-form .form-line input { width: 286px; height: 22px; }
+.desk .create-app .step3-form textarea { width: 90%; height: 125px; }
+.desk .create-app .ok { font-size: 14px; font-weight: bold; text-align: center; color: #333; }
+.desk .create-app .form-line2 label { width: 100px; display: block; height: 28px; line-height: 28px; }
+.desk .create-app .form-line2 input { width: 200px; height: 26px; padding: 0px; }
+.desk .form-createService { height: 50px; line-height: 50px; padding-left: 20px; padding-right: 20px; background: #D6E1EE; }
+.desk .form-createService label { display: block; width: 90px; color: #333; }
+.desk .form-createService input { width: 322px; height: 30px; padding: 0; border: none; border-radius: 3px; }
+.desk .form-createService button { padding-top: 7px; padding-bottom: 7px; height: auto; padding-left: 20px; padding-right: 20px; }
+.desk .list-float li { width: 20%; height: 20%; float: left; margin-top: 20px; }
+.desk .list-box { border: 1px solid #D6E1EE; margin-right: 20px; padding: 10px; cursor: pointer; }
+.desk .list-box:hover { border: 1px solid #F85549; margin-right: 20px; padding: 10px; }
+.desk .list-box .title { text-align: right; height: 18px; line-height: 18px; color: #FA8E88; }
+.desk .list-box .icon { margin: 0 auto; width: 60px; margin-top: 10px; margin-bottom: 20px; height: 60px; }
+.desk .list-box .text { text-align: center; font-weight: bold; }
+.desk .list-box .subText { text-align: center; color: #aaa; padding-bottom: 10px; }
+/*环境变量*/
+.f14 { font-size: 14px; color: #333; }
+.h_box { background: #FFF; padding: 0 20px 20px; overflow: hidden; }
+.h_title { border-bottom: 1px solid #d6e1ed; height: 42px; line-height: 42px; }
+.h_title .hjbl { display: inline-block; color: #000; font-size: 14px; font-weight: bold; float: left; }
+.addnews { float: right !important; margin-top: 10px; }
+.h_con { margin-top: 20px; overflow: hidden; }
+.bl_tit { overflow: hidden; }
+.h_name { display: inline-block; width: 20% !important; margin-right: 20px; height: 30px; line-height: 30px; float: left; }
+.h_zhi { display: inline-block; width: 75%; height: 30px; line-height: 30px; }
+.bl_tit .h_name, .bl_tit .h_zhi { background: #e9eef3; color: #333333; padding-left: 10px; float: left; }
+.h_con dd { margin: 20px 0; padding-left: 10px; overflow: hidden; }
+.h_con .wzhi { display: inline-block; height: 26px; line-height: 26px; background: #f8fafb; border: 1px solid #d6e1ed; padding: 0 10px; width: 300px; border-radius: 2px; margin-right: 30px; float: left; }
+.h_con .cur { background: #f4f4f4; border: 1px solid #e2e2e2; }
+.h_con .btn, .h_title .btn { display: inline-block; padding: 0 14px; height: 28px; line-height: 28px; border-radius: 2px; color: #FFF; margin-right: 10px; cursor: pointer; float: left; }
+.save { background: #f2695f; }
+.del { background: #94a2b0; }
+.h_name01 { display: inline-block; background: #f8fafb; border: 1px solid #d6e1ed; height: 26px; line-height: 26px; float: left; }
+/*域名管理*/
+.yuming { margin: 20px 0; position: relative; }
+.yuming .line { display: inline-block; position: absolute; border-left: 1px solid #d6e1ed; left: 360px; top: 0; height: 28px; }
+.yuming .top { display: inline-block; position: absolute; top: -2px; left: 364px; color: #59acf1; font-size: 14px; cursor: pointer; }
+.yuming .bottom { display: inline-block; position: absolute; top: 10px; left: 364px; color: #59acf1; font-size: 14px; cursor: pointer; }
+.yuming label { display: inline-block; width: 56px; float: left; }
+.yuming .text { display: inline-block; width: 320px; margin-right: 10px; }
+.yuming .inp { display: inline-block; height: 26px; line-height: 26px; background: #f8fafb; border: 1px solid #d6e1ed; padding: 0 10px; width: 300px; border-radius: 2px; margin-right: 10px; }
+.yuming-popmenu { position: absolute; background: #FFF; width: 303px; height: auto; min-width: 20px; border: 1px solid #d6e1ed; top: 29px; left: 56px; z-index: 100; }
+.h_con .btn01 { display: inline-block; padding: 0 14px; height: 22px; line-height: 22px; border-radius: 2px; color: #FFF; margin-right: 10px; cursor: pointer; }
+/*新建版本*/
+.Dialog_deskVer { padding: 0 20px 20px; }
+.verCon { margin-top: 15px; position: relative; color: #333; }
+.verCon label { display: inline-block; width: 70px; color: #333; float: left; height: 22px; line-height: 22px; }
+.inp_bg { display: inline-block; height: 20px; line-height: 20px; background: #f8fafb; border: 1px solid #d6e1ed; padding: 0 10px; width: 180px; border-radius: 2px; margin-right: 10px; }
+.inp_bg01 { display: inline-block; height: 20px; line-height: 20px; background: #f8fafb; border: 1px solid #d6e1ed; padding: 0 10px; width: 245px; border-radius: 2px; margin-right: 10px; margin-top: 7px; }
+.verCon .describe { display: inline-block; line-height: 20px; background: #f8fafb; border: 1px solid #d6e1ed; padding: 5px 10px; width: 360px; border-radius: 2px; }
+
+.xmfz { clear: both; overflow: hidden; margin-top: 14px; }
+.xmfz_left { color: #333; font-size: 14px; font-weight: bold; height: 44px; line-height: 44px; }
+.xmfz_right { display: inline-block; float: right; height: 22px; line-height: 22px; border: 1px solid #d6e1ed; padding: 0 10px; width: 245px; border-radius: 2px; margin-right: 10px; margin-top: 7px; background: url(../images/login/serch-alt.png) no-repeat 5px center #f8fafb; }
+.ver_btn { text-align: center; margin: 20px 0; overflow: hidden; }
+.ver_btn span { margin: 0 15px; }
+/*接入申请*/
+.inp_bg02 { background: #f4f4f4; border: 1px solid #e2e2e2; border-radius: 2px; width: 368px; height: 20px; line-height: 20px; padding: 0 10px; color: #333; font-size: 14px; }
+.verCon .up { display: inline-block; position: absolute; left: 255px; top: 0px; color: #3f9ff0; font-size: 14px; }
+/*备份等级*/
+.bk_sm { color: #666; clear: both; padding: 10px 0; }
+/*更多操作*/
+.ver-more { display: inline-block; position: relative; }
+.ver-son { position: absolute; top: 23px; left: 0; background: #2b75b3; width: 100%; overflow: hidden; display: none; }
+.ver-son li { display: inline-block; height: 22px; line-height: 22px; text-align: center; color: #FFF; width: 100%; }
+.ver-son li.cur { background: #f2695f; }
+.Dialog_seeLog { overflow: hidden; overflow-y: auto; padding: 5px; height: 450px; }

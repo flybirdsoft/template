@@ -1,0 +1,870 @@
+@charset "utf-8";
+/* write by wuweiwei*/
+body {
+	padding: 0;
+	margin: 0;
+	background: #FFF;
+	min-width: 1190px;
+}
+/*--------通用样式 begin ---------*/
+.contentHeader{
+	height:40px;
+	background:#e9eef3;
+	padding-left:20px;
+	line-height:40px;
+	color:#666;
+}
+.contentHeader .curAddress{ 
+	color:#333;			
+}
+.contentHeader .cur{
+	background-image:url(../images/frame/banner-icon.png);
+	background-repeat:no-repeat;
+	background-position:0px center;
+	width:16px;
+	height:40px;
+	float:left;
+	margin-right:10px;
+}
+.content{
+	padding-left:20px;
+	padding-right:20px;
+	height:auto;
+}
+*{
+	font-size: 12px;
+	font-family: "微软雅黑";
+	padding: 0px;
+	margin: 0px;
+}
+.fl {
+	float: left }
+.fr {
+	float: right;
+}
+.clear {
+	clear: both }
+a {
+	text-decoration: none;
+}
+.precent50 {
+	width: 50%;
+}
+.bgColor-comm,.comm-bgColor {
+	background: #FFF;
+}
+.wSpace20 {
+	width: 20px;
+}
+.marginL20 {
+	}
+textarea:focus {
+	outline: none;
+}
+/*slideButton begin*/
+.slideButton {
+	overflow: hidden;
+	width: 58px;
+	height: 22px;
+	background: #e3e3e3;
+	border-radius: 3px;
+	cursor: pointer;
+}
+.slideButton .slideButton-content {
+	width: 80px;
+	height: 22px;
+	line-height: 22px;
+}
+.slideButton dl {
+	background: #FFF;
+	border: 1px solid #CCC;
+	border-radius: 2px;
+	width: 20px;
+	height: 18px;
+	border-radius: 2px;
+	margin-top: 1px;
+	float: left;
+}
+.slideButton dt {
+	width: 10px;
+	height: 0px;
+	border: 1px solid #3399ef;
+	margin-top: 3px;
+	margin-left: 4px;
+}
+.slideButton h5 {
+	margin: 0;
+	width: 35px;
+	text-align: center;
+	float: left;
+}
+.slideButton h6 {
+	margin: 0;
+	width: 35px;
+	text-align: center;
+	float: left;
+}
+/*slideButton end*/
+/*arrowLabel begin*/
+.arrowLabel {
+	overflow: hidden;
+	cursor: pointer;
+	height: 40px;
+}
+.arrowLabel h5 {
+	margin: 0px;
+	text-align: center;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #c8d6e6;
+	border-right: none;
+	font-weight: normal;
+	width: auto;
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+.arrowLabel-select h5 {
+	margin: 0px;
+	text-align: center;
+	height: 24px;
+	line-height: 24px;
+	border: 1px solid #F85549;
+	border-right: none;
+	font-weight: normal;
+	width: auto;
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+	background: #F85549;
+	color: #FFF;
+}
+.arrowLabel dl {
+	position: relative;
+	width: 26px;
+	height: 26px;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+.arrowLabel-select dl {
+	position: relative;
+	width: 26px;
+	height: 26px;
+	float: left;
+	padding: 0;
+	margin: 0;
+}
+.arrowLabel dl dt {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	border-top: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-left: 13px solid #d6e1ed;
+}
+.arrowLabel-select dl dt {
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	border-top: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-left: 13px solid #F85549;
+}
+.arrowLabel dl dt div {
+	position: relative;
+	top: -13px;
+	left: -15px;
+	width: 0px;
+	height: 0px;
+	border-top: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-left: 13px solid #FFF;
+}
+.arrowLabel-select dl dt div {
+	position: relative;
+	top: -13px;
+	left: -15px;
+	width: 0px;
+	height: 0px;
+	border-top: 13px solid transparent;
+	border-bottom: 13px solid transparent;
+	border-left: 13px solid #F85549;
+}
+/*arrowLabel end*/
+/*-------通用样式 end -----------*/
+	.mainTop {
+	height: 50px;
+	background:#30465d;
+}
+.mainTop .logo {
+	width: 170px;
+	height:50px;
+	background:#f85549;
+	text-align:center;
+	line-height:70px;
+}
+.mainTop .content {
+	width: auto;
+	height: 50px;
+	line-height: 50px;
+	margin-right: 20px;
+	/*overflow:hidden;*/
+	
+}
+.mainTop .content .user {
+	height: 60px;
+	padding-left: 20px;
+}
+.mainTop .content .user div {
+	margin-top: 14px;
+}
+.mainTop .content .user .photo {
+	height: 17px;
+	width: 12px;
+	margin-right: 10px;
+	background: url(../images/frame/top-user-photo.png) no-repeat;
+}
+.mainTop .content .user .text {
+	height: 32px;
+	line-height: 16px;
+	width: 50px;
+	margin-right: 2px;
+	color: #fff;
+}
+.mainTop .content .user .close {
+	height: 32px;
+	line-height: 16px;
+	color:#f85549;
+	cursor:pointer;
+}
+.mainTop .content .level {
+	height: 60px;
+	padding-left: 20px;
+	border-left: 1px solid #217ac5;
+	color: #FFF;
+}
+.mainTop .content .level .options {
+	width: 115px;
+	height: 22px;
+	border-radius: 10px;
+	background: #177bd0;
+	margin-top: 19px;
+	margin-right: 25px;
+	line-height: 22px;
+	font-weight: bold;
+	padding-left: 10px;
+	position: relative;
+}
+.mainTop .content .level .options dl {
+	position: relative;
+	top: 2px;
+	left: -5px;
+	background: #177BD0;
+	cursor: pointer;
+	display: none;
+}
+.mainTop .content .level .options dt {
+	padding: 3px;
+	cursor: pointer;
+}
+.mainTop .content .level .options dt:hover {
+	background: #75bbf4;
+}
+.mainTop .content .level .options .cur {
+	border-radius: 11px;
+	width: 22px;
+	height: 22px;
+	background: #e62034;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	cursor: pointer;
+}
+.mainTop .content .level .options .cur div {
+	position: absolute;
+	right: 6px;
+	top: 10px;
+	width: 0px;
+	height: 0px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #FFF;
+}
+.mainTop .content .mainMenu {
+	width: auto;
+	height: auto;
+}
+.mainTop .content .mainMenu div {
+	cursor: pointer;
+	height: 47px;
+	line-height: 47px;
+	margin-right: 30px;
+	color: #FFF;
+	font-size: 16px;
+}
+.mainTop .content .mainMenu div:hover {
+	height: 47px;
+	border-bottom: 3px solid #fd3030;
+}
+.mainTop .content .mainMenu div.selected {
+	height: 47px;
+	border-bottom: 3px solid #fd3030;
+}
+.mainTop .content .mainMenu i {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	margin-right: 8px;
+	background-image: url(../images/frame/top-mainMenu-icons.png);
+	background-repeat: no-repeat;
+}
+.mainTop .content .mainMenu a {
+	font-size: 16px;
+	color: #FFF;
+	text-decoration: none;
+}
+.mainTop .content .mainMenu .board {
+	background-position: 0px 0px;
+}
+.mainTop .content .mainMenu .desk {
+	background-position: -16px 0px;
+}
+.mainTop .content .mainMenu .folder {
+	background-position: -32px 0px;
+}
+.mainTop .content .mainMenu .price {
+	background-position: -48px 0px;
+}
+.mainTop .content .mainMenu .docCenter {
+	background-position: -64px 0px;
+}
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+.mainSide {
+	background: #30465d;
+	width: 170px;
+	color: #9cbad8;
+}
+.mainSide .menuName {
+	background: #d7e4f1;
+	color: #758a9f;
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	font-weight: bold;
+	padding-left: 20px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.mainSide .sideMenu-box {
+	height: auto;
+}
+.sideMenuBox-separator {
+	height: 0px;
+	border-top: 1px solid #234260;
+}
+.sideMenuBox-item {
+	background: #1a3856;
+	color: #7997b5;
+	font-size: 14px;
+	height: auto;
+	line-height: 49px;
+	padding-left: 20px;
+	position: relative;
+	cursor: pointer;
+}
+.sideMenuBox-item:hover {
+	background: #112c46;
+	color: #FFF;
+	font-size: 14px;
+	height: auto;
+	line-height: 49px;
+	padding-left: 17px;
+	border-left: 3px solid #e62034;
+}
+.sideMenuBox-item .sideMenuBox-item-cur {
+	position: absolute;
+	right: 10px;
+	top: 20px;
+	width: 0px;
+	height: 0px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 7px solid #e9eef3;
+}
+.sideMenuBox-itemC {
+	background: #112c46;
+	color: #FFF;
+	font-size: 14px;
+	height: auto;
+	line-height: 49px;
+	padding-left: 17px;
+	border-left: 3px solid #e62034;
+}
+.sideMenuBox-itemC a {
+	color: #FFF!important;
+}
+
+.sideMenuBox-item .sideMenuBox-item-curDown {
+	position: absolute;
+	right: 10px;
+	top: 20px;
+	width: 0px;
+	height: 0px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 7px solid #e9eef3;
+}
+
+.sideMenuBox-item-ex {
+	position: absolute;
+	left: 10px;
+	top: 18px;
+	width: 0px;
+	height: 0px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 10px solid #e9eef3;
+}
+.sideMenuBox-item-cl {
+	position: absolute;
+	left: 10px;
+	top: 18px;
+	width: 0px;
+	height: 0px;
+	border-top: 5px solid transparent;
+	border-bottom: 5px solid transparent;
+	border-left: 10px solid #e9eef3;
+}
+.sideSubMenu-item {
+	cursor: pointer;
+	background: #30465d;
+	/*#1a3856;*/
+	color: #7997b5;
+	font-size: 14px;
+	height: auto;
+	line-height: 40px;
+	padding-left: 20px;
+	border-bottom:1px solid #3e5267;
+}
+.sideSubMenu-item:hover {
+	background: #4F749B;
+	color: #FFF;
+}
+.sideSubMenu-itemC {
+	background: #4F749B;
+	color: #FFF;
+}
+.sideSubMenu-itemC a {
+	background: #4F749B;
+	color: #FFF!important;
+}
+.sideSubMenu-item:hover a {
+	color: #FFF;
+	display: block;
+}
+.sideMenuBox-item:hover a {
+	color: #FFF;
+	display: block;
+}
+.sideMenuBox a {
+	color: #9cb5cf;
+	text-decoration: none;
+	display: block;
+	font-size:14px;
+}
+#mainSideMenu i {
+	width: 16px;
+	height: 16px;
+	display: block;
+	float: left;
+	margin-top: 16px;
+	margin-right: 10px;
+}
+/*菜单图标 begin*/
+	.sideMenu-icon-app {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: 0px 0px;
+}
+.sideMenu-icon-service {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -16px 0px;
+}
+.sideMenu-icon-server {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: 0px -32px;
+}
+.sideMenu-icon-baseInfo {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -32px 0px;
+}
+.sideMenu-icon-instanceInfo {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -48px 0px;
+}
+.sideMenu-icon-serviceInfo {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -64px 0px;
+}
+.sideMenu-icon-variableInfo {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -80px 0px;
+}
+.sideMenu-icon-versionManage {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -96px 0px;
+}
+.sideMenu-icon-domainManage {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -112px 0px;
+}
+.sideMenu-icon-warning {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -128px 0px;
+}
+.sideMenu-icon-action {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -144px 0px;
+}
+.sideSubMenu-item:hover .sideMenu-icon-server, .sideMenuBox-itemC .sideMenu-icon-server {
+	height: 15px!important;
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -0px -49px;
+}
+.sideSubMenu-item:hover .sideMenu-icon-service, .sideSubMenu-itemC .sideMenu-icon-service {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -16px -16px;
+}
+.sideSubMenu-item:hover .sideMenu-icon-app, .sideSubMenu-itemC .sideMenu-icon-app {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: 0px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-icon-baseInfo, .sideMenuBox-itemC .sideMenu-icon-baseInfo {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -32px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-icon-instanceInfo, .sideMenuBox-itemC .sideMenu-icon-instanceInfo {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -48px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-icon-serviceInfo, .sideMenuBox-itemC .sideMenu-icon-serviceInfo {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -64px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-icon-variableInfo, .sideMenuBox-itemC .sideMenu-icon-variableInfo {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -80px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-icon-versionManage, .sideMenuBox-itemC .sideMenu-icon-versionManage {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -96px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-icon-domainManage, .sideMenuBox-itemC .sideMenu-icon-domainManage {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -112px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-icon-warning, .sideMenuBox-itemC .sideMenu-icon-warning {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -128px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-icon-action, .sideMenuBox-itemC .sideMenu-icon-action {
+	background-image: url(../images/frame/sideMenu-icons.png);
+	background-position: -144px -16px;
+}
+/*------*/
+	.sideMenu-userCenter-icon-overView {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: 0px 0px;
+}
+.sideMenu-userCenter-icon-baseInfo {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -16px 0px;
+}
+.sideMenu-userCenter-icon-password {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -32px 0px;
+}
+.sideMenu-userCenter-icon-myUser {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -48px 0px;
+}
+.sideMenu-userCenter-icon-mySpace {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -64px 0px;
+}
+.sideMenu-userCenter-icon-myAccount {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -80px 0px;
+}
+.sideMenu-userCenter-icon-myService {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -96px 0px;
+}
+.sideMenu-userCenter-icon-codeHouse {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -112px 0px;
+}
+.sideMenu-userCenter-icon-ws {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -128px 0px;
+}
+.sideMenu-userCenter-icon-sc {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -144px 0px;
+}
+.sideMenu-userCenter-icon-ns {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -160px 0px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-overView, .sideMenuBox-itemC .sideMenu-userCenter-icon-overView {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: 0px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-baseInfo, .sideMenuBox-itemC .sideMenu-userCenter-icon-baseInfo {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -16px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-password, .sideMenuBox-itemC .sideMenu-userCenter-icon-password {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -32px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-myUser, .sideMenuBox-itemC .sideMenu-userCenter-icon-myUser {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -48px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-mySpace, .sideMenuBox-itemC .sideMenu-userCenter-icon-mySpace {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -64px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-myAccount, .sideMenuBox-itemC .sideMenu-userCenter-icon-myAccount {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -80px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-myService, .sideMenuBox-itemC .sideMenu-userCenter-icon-myService {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -96px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-codeHouse, .sideMenuBox-itemC .sideMenu-userCenter-icon-codeHouse {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -112px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-ws, .sideMenuBox-itemC .sideMenu-userCenter-icon-ws {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -128px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-sc, .sideMenuBox-itemC .sideMenu-userCenter-icon-sc {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -144px -16px;
+}
+.sideMenuBox-item:hover .sideMenu-userCenter-icon-ns, .sideMenuBox-itemC .sideMenu-userCenter-icon-ns {
+	background-image: url(../images/userCenter/sideMenu-icons.png);
+	background-position: -160px -16px;
+}
+/*菜单图标 end*/
+
+/*通用body*/
+.bodyContent {
+	padding-left: 20px;
+	padding-top: 20px;
+	padding-right: 20px;
+}
+
+/*按钮通用样式begin*/
+.button-blue {
+	height: 22px;
+	line-height: 22px;
+	background: #f85549;
+	color: #FFF;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	padding:0 15px;
+}
+.button-red {
+	height: 22px;
+	line-height: 22px;
+	background: #f85549;
+	color: #FFF;
+	border: none;
+	cursor: pointer;
+	border-radius: 3px;
+	padding:0 15px;
+}
+.button-ok {
+	height: 30px;
+	line-height: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background: #f2695f;
+}
+.button-cancel {
+	height: 30px;
+	line-height: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background: #94a2b0;
+	border: none;
+	color: #FFF;
+	border-radius: 3px;
+	cursor: pointer;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.button-confirm {
+	height: 30px;
+	line-height: 30px;
+	margin-left: 20px;
+	margin-right: 20px;
+	background: #F85549;
+	border: none;
+	color: #FFF;
+	border-radius: 3px;
+	cursor: pointer;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+.A-buttonRed {
+	height: 30px;
+	line-height: 30px;
+	background: #f2695f;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 3px;
+	color: #FFF;
+	text-decoration: none;
+	cursor: pointer;
+}
+.A-buttonGray {
+	height: 30px;
+	line-height: 30px;
+	background: #94A2B0;
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 14px;
+	font-weight: bold;
+	border-radius: 3px;
+	color: #FFF;
+	text-decoration: none;
+	cursor: pointer;
+}
+input:focus {
+	outline: none;
+}
+/*按钮通用样式end*/
+	/*对话框 begin*/
+	.dialog {
+	background: #FFF;
+	box-shadow: 0px 0px 5px 3px #adabad;
+}
+.dialog .wDialogBar {
+	height: 40px;
+	line-height: 40px;
+	background: #30465d;
+	color: #FFF;
+}
+.dialog .wDialogBar .wTitle {
+	font-size: 14px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+.dialog .wDialogBar .wClose {
+	font-size: 14px;
+	font-weight: bold;
+	margin-right: 20px;
+}
+/*对话框 end*/
+	.step {
+	position: relative;
+	overflow: hidden;
+	height: 38px;
+}
+.step dl {
+	top: 0px;
+	left: 2%;
+	position: absolute;
+	margin-top: 18px;
+	border-top: 2px dashed #94A2B0;
+	width: 96%;
+}
+.step dt {
+	top: -2px;
+	left: 0px;
+	position: absolute;
+	border-top: 2px solid #F3695F;
+	width: 96%;
+}
+.step .stepBtn {
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	border-radius: 20px;
+	background: #F6E2E6;
+}
+.step .stepBtn div {
+	width: 29px;
+	height: 29px;
+	border-radius: 20px;
+	background: #f3695f;
+	margin-top: 3px;
+	margin-left: 3px;
+	text-align: center;
+	line-height: 29px;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+}
+.step .stepBtnDisable {
+	background: #e3e9f1;
+}
+.step .stepBtnDisable div {
+	background: #94A2B0;
+}
+.step .stepBtnDark {
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	border-radius: 20px;
+	background: #e3e9f1;
+}
+.step .stepBtnDark div {
+	width: 29px;
+	height: 29px;
+	border-radius: 20px;
+	background: #94A2B0;
+	margin-top: 3px;
+	margin-left: 3px;
+	text-align: center;
+	line-height: 29px;
+	color: #FFF;
+	font-size: 14px;
+	font-weight: bold;
+}
+.step .dotLine {
+	position: absolute;
+	margin-top: 18px;
+	border-top: 2px dashed #F3695F;
+	height: 0px;
+	width: 20%;
+	left: 0;
+	top: 0;
+}
+
+.search{
+	overflow:hidden;
+	height:30px;
+	line-height:30px;
+}
+.search .text{
+	border:none;
+}

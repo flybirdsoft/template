@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/frame.css" />
+<link rel="stylesheet" type="text/css" href="css/desk.css" />
+<style type="text/css">
+
+body{
+	padding:20px;
+}
+.even{
+	background:#eee;
+}
+.odd{
+	background:#f2f399;
+}
+</style>
+
+</head>
+<body>
+
+    <div class="desk">
+      <div class="app-create fl">
+        <div class="app-create-hline"></div>
+        <div class="app-create-vline"></div>
+        <div class="app-create-text">新增基础服务</div>
+      </div>    
+      <div class="app-myapp fl ${bgcolor}">
+        <div class="app-myapp-shared">${tip}</div>
+        <div class="app-myapp-photo icons"></div>
+        <div class="app-myapp-caption">${title}</div>
+        <div class="app-myapp-op">
+          <div class="fl begin_cur"> <span></span> </div>
+          <div class="fl stop_cur"> <span></span> </div>
+          <div class="fr close_cur"> <span></span> </div>
+          <div class="fr set"> <span></span> </div>
+        </div>
+      </div>
+    </div>
+
+</body>
+</html>
+
+<script src="script/libs/jquery/jquery.js"></script>
+<script src="script/libs/ui/template.js"></script>
+<script>
+data = [
+        {tip:"共享",title:"我的标题1"},
+        {tip:"修改",title:"我的标题2"},
+        {tip:"不共",title:"我的标题3"},
+        {tip:"修改",title:"我的标题4"},
+        {tip:"共享",title:"我的标题5"},
+        {tip:"共享",title:"我的标题6"},
+        {tip:"共享",title:"我的标题7"},
+        {tip:"共享",title:"我的标题8"},
+        {tip:"共享",title:"我的标题9"},
+        {tip:"共享",title:"我的标题10"},
+        {tip:"共享",title:"我的标题11"},
+        {tip:"共享",title:"我的标题12"},
+        {tip:"共享",title:"我的标题13"},
+        {tip:"共享",title:"我的标题14"},
+        {tip:"共享",title:"我的标题15"},
+        ];
+T.repeat({
+	repeatId:".app-myapp",
+	data:data,
+	/*count:3,*/
+	process:function(object){
+		/*
+		object.index是每个的索引
+		object.item:是data数组里的每一行
+		功能： 元素 <div class="app-myapp fl ${bgcolor}"> 中的 ${bgcolor}被替换为 odd 或 even
+		*/
+		var result={};
+		
+		/*根据数组的索引给div的class生成 不同的样式 */
+		if(object.index%2==0)
+		{
+			result.bgcolor="odd";
+		}
+		else
+		{
+			result.bgcolor="even";
+		}
+		if(object.index==1)/*把索引等于1的标题加上样式 */
+		{
+			result.title = "<i style='color:#f00;font-size:20px;'>"+object.item.title+"<i>";
+		}
+		return result;
+		/*bgcolor,title就是页面上的${bgcolor},${title}*/
+	}
+});
+</script>
+
