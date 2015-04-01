@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="css/frame.css" />
+<link rel="stylesheet" type="text/css" href="css/desk.css" />
+<style type="text/css">
+
+body{
+	padding:20px;
+}
+.even{
+	background:#eee;
+}
+.odd{
+	background:#f2f399;
+}
+.optionsBox{
+    height: 50px;
+    line-height: 50px;
+    background: #ccc;
+    margin-bottom:20px;
+    padding-left: 20px;
+}
+.button-bigBlue{
+    padding: 5px 20px;
+    height: auto;
+    background: none repeat scroll 0% 0% #2492EE;
+    color: #FFF;
+    border: medium none;
+    cursor: pointer;
+    border-radius: 3px; 
+}
+</style>
+
+</head>
+<body>
+    <div class="optionsBox">
+        <button id="btn_reLoad" class="button-bigBlue">重新加载数据</button>
+    </div>
+
+    <div class="desk">
+        <div class="app-create fl">
+            <div class="app-create-hline"></div>
+            <div class="app-create-vline"></div>
+            <div class="app-create-text">新增基础服务</div>
+        </div>
+    <!--模板 begin-->  
+    <div class="app-myapp fl ${bgcolor}">
+        <div class="app-myapp-shared">${numbers.app.count}</div>
+        <div class="app-myapp-photo icons"></div>
+        <div class="app-myapp-caption">${title}</div>
+        <div class="app-myapp-op">
+            <a target="_blank" href="http://${url}">${url}</a>
+        </div>
+    </div>
+    <!--模板 end-->  
+    </div>
+
+</body>
+</html>
+
+<script src="js/jquery.js"></script>
+<script src="js/template.js"></script>
+<script>
+data = [
+        {
+        	title:"我的应用1",
+            url:"www.cnblogs.com/wsoft",
+        	numbers:
+        	{
+        		app:{count:"100"}
+        	}
+        },
+        {
+        	title:"我的应用2",
+            url:"www.flybirdsoft.com/WUI",
+            numbers:
+            {
+                app:{count:"500"}
+            }
+        },
+        {
+        	title:"我的应用3",
+            url:"www.flybirdsoft.com",
+            numbers:
+            {
+                app:{count:"300"}
+            }
+        },
+        ];
+
+template.repeat({
+	repeatId:".app-myapp",
+	data:data,
+	process:function(object){
+		/*
+		object.index=每个的索引
+		object.item=data数组里的每一行
+		功能： 元素 <div class="app-myapp fl ${bgcolor}"> 中的 ${bgcolor}被替换为 odd 或 even
+		*/
+		return  {
+                    "bgcolor": object.index%2==0?"odd":"even" ,
+                    "title"  : "<i style='color:#f00;font-size:14px;'>"+object.item.title+"</i>" ,
+                    "numbers.app.count" : parseInt(Math.random()*100)
+                };
+		/*
+        return {...}可以自定义页面的字段值
+        bgcolor,title,numbers.app.count就是页面上的${bgcolor},${title},${numbers.app.count}
+        */
+	}
+});  /*end template*/
+
+/*单击按钮载入数据*/
+$("#btn_reLoad").click(function(){
+    template.repeat({
+        repeatId:".app-myapp",
+        data:data,
+        count:2
+    });
+});
+</script>
+
