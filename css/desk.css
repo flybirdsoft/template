@@ -16,11 +16,11 @@
 .desk .app-myapp { position: relative; width: 163px; height: 148px; border: 1px solid #d6e1ed; margin-left: 20px; cursor: pointer; margin-bottom: 20px; }
 .desk .app-myapp:hover { border-color: #f85549; }
 .desk .app-myapp-shared { width: 26px; height: 16px; float: right; margin-top: 10px; margin-right: 10px; color: #9ca9b6; }
-.desk .app-myapp-photo { width: 50px; height: 50px; border-radius: 10px; clear: both; margin: 5px auto; }
+.desk .app-myapp-photo { width: 50px; height: 50px; border-radius: 10px; clear: both; margin: 5px auto; background-image:url(../images/icon.png);border-radius:10px; }
 .desk .app-myapp-photo img { width: 40px; height: 40px; border-radius: 10px; border: none; }
 .desk .app-myapp-caption { height: 18px; line-height: 18px; color: #333333; text-align: center; font-size: 14px; margin-bottom: 10px; }
 .desk .app-myapp-imagelist img { width: 40px; height: 40px; text-align: center; }
-.desk .app-myapp-op { margin-top: 23px; border-top: 1px solid #d6e1ed; }
+.desk .app-myapp-op { margin-top: 23px; border-top: 1px solid #d6e1ed; height: 24px;line-height: 24px; text-align: center;}
 .desk .app-myapp-op span { background-image: url(../images/desk/baseSevice-icon.png); }
 .desk .app-myapp-op .stateText { width: 26px; height: 26px; text-align: center; line-height: 26px; vertical-align: middle; }
 /*开始（三角形）样式*/

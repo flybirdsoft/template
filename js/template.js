@@ -7,7 +7,9 @@ wui:www.flybirdsoft.com/wui
 
 var template={
 	_startSymbol:"\\$\{",
-	_endSymbol:"\}"
+	_endSymbol:"\}",
+	templateElement:{},
+	contentNode:null
 };
 
 window.T=window.template=template;
@@ -35,9 +37,11 @@ template.endSymbol=function(symbol){
 			_symbol = _symbol + '\\' ;
 		}
 		_symbol = _symbol + symbol.substr(i,1);
-	}	
+	}
 	this._endSymbol = symbol;
 };
+
+/*模板函数入口*/
 template.repeat = function(options){
 	/*
 	options={
@@ -64,9 +68,10 @@ template.repeat = function(options){
 	var data =[];             /*存储传入的数据，list*/
 	var i,j,len,item,subItem; /*item=data中的每一行数据 , len=data数组长度*/
 	var v,subv,jsonStr="";    /*v,subv存储JOSN中的key; jsonStr存储JSON的表达式形式如：title.sum*/
-	var target = $(options.id)[0]||$(options.repeatId)[0];/*存储模板容器的id*/
+	var _id_ = options.id||options.repeatId;/*存储模板的id*/
+	var target;/*存储模板DOM对象*/
 	var nextNode=null;
-	var parent = target.parentNode;
+	var parent;/*模板的父节点*/
 	var fun=function(){},result,v;  /*fun是process回调函数*/
 	var bindResult;
 	var resultObject={};
@@ -76,6 +81,9 @@ template.repeat = function(options){
 	var strV/*即页面字段值例如：${title}*/,reg/*strV的正则表达式*/;
 	var attrValue="";/*repeatId元素上的遍历属性值*/
 	
+	target = $(options.id)[0]||$(options.repeatId)[0];
+	parent = target.parentNode;
+	template.deleteNode(target);
 	if(options.template==undefined)
 	{
 		options.template = target.innerHTML;
@@ -123,9 +131,21 @@ template.repeat = function(options){
 		item = data[i];
 		for(v in result)
 		{
+			if(typeof(result[v])!="object")
+			{
+				strV = this._startSymbol+v+this._endSymbol;
+				reg = new RegExp(strV,"g");
+				tmpl.string = tmpl.string.replace(reg,result[v]);
+			}
+			else
+			{
+				template.getScope(result,v,tmpl);
+			}
+			/*
 			strV = this._startSymbol+v+this._endSymbol;
 			reg = new RegExp(strV,"g");	
 			tmpl.string = tmpl.string.replace(reg,result[v]);
+			*/
 		}
 		for(v in item)
 		{
@@ -143,8 +163,12 @@ template.repeat = function(options){
 		
 		node.innerHTML = tmpl.string;
 		parent.insertBefore(node,nextNode.nextSibling);
+		node.style.display="block";
+		node.setAttribute("templateItem","templateItem");
 	}
-	parent.removeChild(target);
+	/*parent.removeChild(target); 删除模板元素*/
+	target.style.display="none";
+
 	if(options.bind!=undefined)
 	{
 		json.target = $(options.id)[0];
@@ -155,6 +179,7 @@ template.repeat = function(options){
 	}
 }/*end repeat*/
 
+/*获取JSON的对象形式*/
 template.getScope = function(item,v,tmpl,scopeStr){
 	var jsonStr="",subv,subItem;
 	subItem = item[v];
@@ -182,4 +207,25 @@ template.getScope = function(item,v,tmpl,scopeStr){
 		}				
 	}
 	return ;
+}
+
+/*删除数据*/
+template.deleteNode=function(target){
+	var node = target.nextSibling;
+	var nextNode;
+	var ife = (node.nodeType==1&&node.getAttribute("templateItem")=="templateItem")||node.nodeType!=1;
+	while(node!=null&&ife)
+	{
+		nextNode = node.nextSibling;
+		node.parentNode.removeChild(node);
+		node = nextNode;
+	}
+	return;
+	for(i=0;i<len;i++)
+	{
+		if(childNodes[i].nodeType==1&&childNodes[i].getAttribute("templateItem")=="templateItem")
+		{
+			parentNode.removeChild(childNodes[i]);
+		}
+	}
 }
