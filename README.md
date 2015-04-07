@@ -8,6 +8,7 @@
 #代码示例一：
 
 $("#btn_reLoad").click(function(){
+
     template.repeat({
         repeatId:".app-myapp",
         data:data,
