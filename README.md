@@ -7,14 +7,15 @@
 
 #代码示例一：
 
-$("#btn_reLoad").click(function(){
+
 
     template.repeat({
         repeatId:".app-myapp",
         data:data,
         count:3
     });
-});
+
+
 参数说明：
 1.repeatId 是 重复循环出现的元素容器
 2.data 是 array
