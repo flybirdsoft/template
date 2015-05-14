@@ -44,9 +44,9 @@ process 是 data参数中每个对象的自定义处理函数，参数可选。
 
 process	函数的参数参数object：
 
-	object 是 JSON
+	object 是 包含index和item
 	
-	object.index=每个的索引
+	object.index=array中的索引
 	
 	object.item=data数组里的每一行
 	
