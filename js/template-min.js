@@ -1,61 +1,7 @@
-/************************************************
+﻿/************************************************
 编写：邬畏畏
 blogs:www.cnblogs.com/wsoft
 wui:www.flybirdsoft.com/wui
 功能：模板处理
 *************************************************/
-var template={_startSymbol:"\\$\{",_endSymbol:"\}",templateElement:{},contentNode:null};window.T=window.template=template;template.startSymbol=function(symbol){var _symbol="",i;var regx="\^$*+?{}[]|.";for(i=0;i<symbol.length;i++)
-{if(regx.indexOf(symbol.substr(i,1))>=0)
-{_symbol=_symbol+'\\';}
-_symbol=_symbol+symbol.substr(i,1);}
-this._startSymbol=_symbol;};template.endSymbol=function(symbol){var _symbol="",i;var regx="\^$*+?{}[]|.";for(i=0;i<symbol.length;i++)
-{if(regx.indexOf(symbol.substr(i,1))>=0)
-{_symbol=_symbol+'\\';}
-_symbol=_symbol+symbol.substr(i,1);}
-this._endSymbol=symbol;};template.repeat=function(options){if(options.data==undefined)
-{throw new Error("参数名称不对,参数是{},缺少data");return;}
-if((options.repeatId==undefined&&options.id==undefined))
-{throw new Error("参数名称不对,参数是{},缺少id或repeatId");return;}
-var tmpl={string:""},all="";var data=[];var i,j,len,item,subItem;var v,subv,jsonStr="";var _id_=options.id||options.repeatId;var target;var nextNode=null;var parent;var fun=function(){},result,v;var bindResult;var resultObject={};var json={};var node=null;var strV,reg;var attrValue="";target=$(options.id)[0]||$(options.repeatId)[0];parent=target.parentNode;template.deleteNode(target);if(options.template==undefined)
-{options.template=target.innerHTML;}
-if(options.data.length==undefined)
-{len=1;data[0]=options.data;}
-else
-{len=options.data.length;data=options.data;}
-if(options.count!=undefined)
-{len=options.count;}
-if(options.process!=undefined)
-{fun=options.process||options.onprocess;}
-nextNode=target;for(i=len-1;i>=0;i--)
-{resultObject={index:i,item:data[i]};result=fun.call(this,resultObject);node=document.createElement(target.nodeName);for(j=0;j<target.attributes.length;j++)
-{attrValue=target.attributes.item(j).value;for(v in result)
-{strV=this._startSymbol+v+this._endSymbol;reg=new RegExp(strV,"g");attrValue=attrValue.replace(reg,result[v]);}
-node.setAttribute(target.attributes.item(j).name,attrValue);}
-tmpl.string=options.template;item=data[i];for(v in result)
-{if(typeof(result[v])!="object")
-{strV=this._startSymbol+v+this._endSymbol;reg=new RegExp(strV,"g");tmpl.string=tmpl.string.replace(reg,result[v]);}
-else
-{template.getScope(result,v,tmpl);}}
-for(v in item)
-{if(typeof(item[v])!="object")
-{strV=this._startSymbol+v+this._endSymbol;reg=new RegExp(strV,"g");tmpl.string=tmpl.string.replace(reg,item[v]);}
-else
-{template.getScope(item,v,tmpl);}}
-node.innerHTML=tmpl.string;parent.insertBefore(node,nextNode.nextSibling);node.style.display="block";node.setAttribute("templateItem","templateItem");}
-target.style.display="none";if(options.bind!=undefined)
-{json.target=$(options.id)[0];json.data=options.data;json.template=options.template;json.id=options.id;bindResult=options.bind.call(this,json);}}
-template.getScope=function(item,v,tmpl,scopeStr){var jsonStr="",subv,subItem;subItem=item[v];if(typeof(subItem)=="object")
-{if(scopeStr==undefined)
-{jsonStr=v;}
-else
-{jsonStr=scopeStr;}
-for(subv in subItem)
-{jsonStr+="."+subv;if(typeof(subItem[subv])=="object")
-{this.getScope(subItem,subv,tmpl,jsonStr);return;}
-strV=this._startSymbol+jsonStr+this._endSymbol;reg=new RegExp(strV,"g");tmpl.string=tmpl.string.replace(reg,subItem[subv]);}}
-return;}
-template.deleteNode=function(target){var node=target.nextSibling;var nextNode;var ife=(node.nodeType==1&&node.getAttribute("templateItem")=="templateItem")||node.nodeType!=1;while(node!=null&&ife)
-{nextNode=node.nextSibling;node.parentNode.removeChild(node);node=nextNode;}
-return;for(i=0;i<len;i++)
-{if(childNodes[i].nodeType==1&&childNodes[i].getAttribute("templateItem")=="templateItem")
-{parentNode.removeChild(childNodes[i]);}}}
+!function(t,e,i,n){window.template={_startSymbol:"\\${",_endSymbol:"}",templateElement:{},contentNode:null},window.T=window.template=template,template.startSymbol=function(t){var e,i="",n="^$*+?{}[]|.";for(e=0;e<t.length;e++)n.indexOf(t.substr(e,1))>=0&&(i+="\\"),i+=t.substr(e,1);this._startSymbol=i},template.endSymbol=function(t){var e,i="",n="^$*+?{}[]|.";for(e=0;e<t.length;e++)n.indexOf(t.substr(e,1))>=0&&(i+="\\"),i+=t.substr(e,1);this._endSymbol=t},template.repeat=function(t){if(void 0==t.data)throw new Error("参数名称不对,参数是{},缺少data");if(void 0==t.repeatId&&void 0==t.id)throw new Error("参数名称不对,参数是{},缺少id或repeatId");var e,i,n,o,r,a,l,d,r,s,p,m,b={string:""},g=[],c=(t.id||t.repeatId,null),f=function(){},u={},y={},h=null,S="";for(a=$(t.id)[0]||$(t.repeatId)[0],l=a.parentNode,template.deleteNode(a),void 0==t.template&&(t.template=a.innerHTML),void 0==t.data.length?(n=1,g[0]=t.data):(n=t.data.length,g=t.data),void 0!=t.count&&(n=t.count),void 0!=t.process&&(f=t.process||t.onprocess),c=a,e=n-1;e>=0;e--){for(u={index:e,item:g[e]},d=f.call(this,u),h=document.createElement(a.nodeName),i=0;i<a.attributes.length;i++){S=a.attributes.item(i).value;for(r in d)p=this._startSymbol+r+this._endSymbol,m=new RegExp(p,"g"),S=S.replace(m,d[r]);h.setAttribute(a.attributes.item(i).name,S)}b.string=t.template,o=g[e];for(r in d)"object"!=typeof d[r]?(p=this._startSymbol+r+this._endSymbol,m=new RegExp(p,"g"),b.string=b.string.replace(m,d[r])):template.getScope(d,r,b);for(r in o)"object"!=typeof o[r]?(p=this._startSymbol+r+this._endSymbol,m=new RegExp(p,"g"),b.string=b.string.replace(m,o[r])):template.getScope(o,r,b);h.innerHTML=b.string,l.insertBefore(h,c.nextSibling),h.style.display="block",h.setAttribute("templateItem","templateItem")}a.style.display="none",void 0!=t.bind&&(y.target=$(t.id)[0],y.data=t.data,y.template=t.template,y.id=t.id,s=t.bind.call(this,y))},template.getScope=function(t,e,i,n){var o,r,a="";if(r=t[e],"object"==typeof r){a=void 0==n?e:n;for(o in r){if(a+="."+o,"object"==typeof r[o])return void this.getScope(r,o,i,a);strV=this._startSymbol+a+this._endSymbol,reg=new RegExp(strV,"g"),i.string=i.string.replace(reg,r[o])}}},template.deleteNode=function(t){for(var e,i=t.nextSibling,n=1==i.nodeType&&"templateItem"==i.getAttribute("templateItem")||1!=i.nodeType;null!=i&&n;)e=i.nextSibling,i.parentNode.removeChild(i),i=e}}(window,void 0,void 0,location);
