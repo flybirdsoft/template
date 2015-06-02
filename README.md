@@ -6,6 +6,17 @@
 功能：把JSON数据渲染到页面。
       此模板实现的功能比较简单，希望大家多提建议。
 
+页面HTML：
+
+    <div class="app-myapp fl ${bgcolor}">
+        <div class="app-myapp-shared">${numbers.app.count}</div>
+        <div class="app-myapp-photo icons"></div>
+        <div class="app-myapp-caption">${title}</div>
+        <div class="app-myapp-op">
+            <a target="_blank" href="http://${url}">${url}</a>
+        </div>
+    </div>
+
 #代码示例一：
 
 
