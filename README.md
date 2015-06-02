@@ -19,6 +19,32 @@
 
 #代码示例一：
 
+var data = [
+        {
+        	title:"我的应用1",
+            url:"www.cnblogs.com/wsoft",
+        	numbers:
+        	{
+        		app:{count:"100"}
+        	}
+        },
+        {
+        	title:"我的应用2",
+            url:"www.flybirdsoft.com/WUI",
+            numbers:
+            {
+                app:{count:"500"}
+            }
+        },
+        {
+        	title:"我的应用3",
+            url:"www.flybirdsoft.com",
+            numbers:
+            {
+                app:{count:"300"}
+            }
+        },
+];
 
 
     template.repeat({
