@@ -19,7 +19,9 @@
 
 #代码示例一：
 
+
 var data = [
+
         {
         	title:"我的应用1",
             url:"www.cnblogs.com/wsoft",
@@ -43,7 +45,7 @@ var data = [
             {
                 app:{count:"300"}
             }
-        },
+        }
 ];
 
 
