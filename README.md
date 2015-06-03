@@ -6,8 +6,47 @@
 功能：把JSON数据渲染到页面。
       此模板实现的功能比较简单，希望大家多提建议。
 
+页面HTML：
+
+    <div class="app-myapp fl ${bgcolor}">
+        <div class="app-myapp-shared">${numbers.app.count}</div>
+        <div class="app-myapp-photo icons"></div>
+        <div class="app-myapp-caption">${title}</div>
+        <div class="app-myapp-op">
+            <a target="_blank" href="http://${url}">${url}</a>
+        </div>
+    </div>
+
 #代码示例一：
 
+
+var data = [
+
+        {
+        	title:"我的应用1",
+            url:"www.cnblogs.com/wsoft",
+        	numbers:
+        	{
+        		app:{count:"100"}
+        	}
+        },
+        {
+        	title:"我的应用2",
+            url:"www.flybirdsoft.com/WUI",
+            numbers:
+            {
+                app:{count:"500"}
+            }
+        },
+        {
+        	title:"我的应用3",
+            url:"www.flybirdsoft.com",
+            numbers:
+            {
+                app:{count:"300"}
+            }
+        }
+];
 
 
     template.repeat({
