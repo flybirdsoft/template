@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>template前端模板1.0版</title>
 <link rel="stylesheet" type="text/css" href="css/frame.css" />
 <link rel="stylesheet" type="text/css" href="css/desk.css" />
 <style type="text/css">
@@ -47,7 +47,7 @@ body{
             <div class="app-create-text">新增基础服务</div>
         </div>
     <!--模板 begin-->  
-    <div class="app-myapp fl ${bgcolor}">
+    <div class="app-myapp fl ${bgcolor}">                         <!--${title},${url}等是data里每个JSON的key-->
         <div class="app-myapp-shared">${numbers.app.count}</div>
         <div class="app-myapp-photo icons"></div>
         <div class="app-myapp-caption">${title}</div>
@@ -64,9 +64,14 @@ body{
 <script src="js/jquery.js"></script>
 <script src="js/template-min.js"></script>
 <script>
-data = [
+/*
+通过简单的示例展示template.repeat如何使用
+注意：
+data里title,url,numbers.app.count对应HTML的${title},${url},${numbers.app.count}
+*/
+var data = [
         {
-        	title:"我的应用1",
+        	title:"我的应用1",            /*对应HTML中的${title}*/
             url:"www.cnblogs.com/wsoft",
         	numbers:
         	{
@@ -75,7 +80,7 @@ data = [
         },
         {
         	title:"我的应用2",
-            url:"www.flybirdsoft.com/WUI",
+            url:"www.xx.com",
             numbers:
             {
                 app:{count:"500"}
@@ -83,7 +88,7 @@ data = [
         },
         {
         	title:"我的应用3",
-            url:"www.flybirdsoft.com",
+            url:"www.yy.com",
             numbers:
             {
                 app:{count:"300"}
@@ -91,34 +96,45 @@ data = [
         },
         ];
 
-template.repeat({
-	repeatId:".app-myapp",
-	data:data,
-	process:function(object){
-		/*
-		object.index=每个的索引
-		object.item=data数组里的每一行
-		功能： 元素 <div class="app-myapp fl ${bgcolor}"> 中的 ${bgcolor}被替换为 odd 或 even
-		*/
-		return  {
-                    "bgcolor": object.index%2==0?"odd":"even" ,
-                    "title"  : "<i style='color:#f00;font-size:14px;'>"+object.item.title+"</i>" ,
-                    "numbers.app.count" : parseInt(Math.random()*100)
-                };
-		/*
-        return {...}可以自定义页面的字段值
-        bgcolor,title,numbers.app.count就是页面上的${bgcolor},${title},${numbers.app.count}
-        */
-	}
-});  /*end template*/
 
-/*单击按钮载入数据*/
+
+template.repeat({
+    repeatId:".app-myapp", /*必选参数*/
+    data:data,             /*必选参数*/
+    count:3                /*可选参数*/
+});
+
+
+
+
+/*
+单击按钮载入数据
+*/
 $("#btn_reLoad").click(function(){
-    template.repeat({
-        repeatId:".app-myapp",
-        data:data,
-        count:3
-    });
+	template.repeat({
+		repeatId:".app-myapp",     /*必选参数*/
+		data:data,                 /*必选参数*/
+		process:function(object){  /*可选参数 : 对data中的每个object进行处理,并通过return{}方式替换HTML里的${..}*/
+			/*
+			object.index = array的索引base 0(即data中索引)
+			object.item  = array中每个object(data数组里的每一行)
+			功能： 元素 <div class="app-myapp fl ${bgcolor}"> 中的 ${bgcolor}被替换为 odd 或 even
+			*/
+			return  {
+	                    "bgcolor": object.index%2==0?"odd":"even" ,
+	                    "title"  : "<i style='color:#f00;font-size:14px;'>"+object.item.title+"</i>" ,
+	                    "numbers.app.count" : parseInt(Math.random()*100)
+	                };
+			/*
+	        return {...}可以自定义页面的字段值
+	        bgcolor,title,numbers.app.count就是页面上的${bgcolor},${title},${numbers.app.count}
+	        */
+		}
+	});  /*end template*/
+});
+
+$(".app-create").click(function(){
+	alert("Author : wuweiwei");
 });
 </script>
 
