@@ -32,7 +32,7 @@ var data = [
         },
         {
         	title:"我的应用2",
-            url:"www.flybirdsoft.com/WUI",
+            url:"www.xx.com",
             numbers:
             {
                 app:{count:"500"}
@@ -40,7 +40,7 @@ var data = [
         },
         {
         	title:"我的应用3",
-            url:"www.flybirdsoft.com",
+            url:"www.yy.com",
             numbers:
             {
                 app:{count:"300"}
