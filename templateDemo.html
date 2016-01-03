@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>template前端模板1.0版</title>
+<title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="css/frame.css" />
 <link rel="stylesheet" type="text/css" href="css/desk.css" />
 <style type="text/css">
@@ -37,7 +37,9 @@ body{
 </head>
 <body>
     <div class="optionsBox">
-        <button id="btn_reLoad" class="button-bigBlue">重新加载数据</button>
+        <button id="btn_reLoad" class="button-bigBlue">重新加载(自定义处理)</button>
+        <button id="btn_insert" class="button-bigBlue">插入数据</button>
+        <button id="btn_append" class="button-bigBlue">追加数据</button>
     </div>
 
     <div class="desk">
@@ -46,16 +48,16 @@ body{
             <div class="app-create-vline"></div>
             <div class="app-create-text">新增基础服务</div>
         </div>
-    <!--模板 begin-->  
-    <div class="app-myapp fl ${bgcolor}">                         <!--${title},${url}等是data里每个JSON的key-->
-        <div class="app-myapp-shared">${numbers.app.count}</div>
-        <div class="app-myapp-photo icons"></div>
-        <div class="app-myapp-caption">${title}</div>
-        <div class="app-myapp-op">
-            <a target="_blank" href="http://${url}">${url}</a>
-        </div>
-    </div>
-    <!--模板 end-->  
+	    <!--模板 begin-->  
+	    <div class="app-myapp fl ${bgcolor}">
+	        <div class="app-myapp-shared">${numbers.app.count}</div>
+	        <div class="app-myapp-photo icons"></div>
+	        <div class="app-myapp-caption">${title}</div>
+	        <div class="app-myapp-op">
+	            <a target="_blank" href="http://${url}">${url}</a>
+	        </div>
+	    </div>
+	    <!--模板 end-->  
     </div>
 
 </body>
@@ -64,14 +66,10 @@ body{
 <script src="js/jquery.js"></script>
 <script src="js/template-min.js"></script>
 <script>
-/*
-通过简单的示例展示template.repeat如何使用
-注意：
-data里title,url,numbers.app.count对应HTML的${title},${url},${numbers.app.count}
-*/
-var data = [
+/*数据*/
+data = [
         {
-        	title:"我的应用1",            /*对应HTML中的${title}*/
+        	title:"我的应用1",
             url:"www.cnblogs.com/wsoft",
         	numbers:
         	{
@@ -80,7 +78,7 @@ var data = [
         },
         {
         	title:"我的应用2",
-            url:"www.xx.com",
+            url:"www.flybirdsoft.com/WUI",
             numbers:
             {
                 app:{count:"500"}
@@ -88,42 +86,39 @@ var data = [
         },
         {
         	title:"我的应用3",
-            url:"www.yy.com",
+            url:"www.flybirdsoft.com",
             numbers:
             {
                 app:{count:"300"}
             }
-        },
+        }
         ];
 
 
 
 template.repeat({
-    repeatId:".app-myapp", /*必选参数*/
-    data:data,             /*必选参数*/
-    count:3                /*可选参数*/
+    repeatElement:$(".app-myapp")[0],
+    data:data,
+    count:3
 });
 
 
-
-
-/*
-单击按钮载入数据
-*/
+/*单击按钮载入数据*/
 $("#btn_reLoad").click(function(){
 	template.repeat({
-		repeatId:".app-myapp",     /*必选参数*/
-		data:data,                 /*必选参数*/
-		process:function(object){  /*可选参数 : 对data中的每个object进行处理,并通过return{}方式替换HTML里的${..}*/
+		type : "cover",
+		repeatElement:$(".app-myapp")[0],
+		data:data,
+		process:function(object){ /*自定义处理过程*/
 			/*
-			object.index = array的索引base 0(即data中索引)
-			object.item  = array中每个object(data数组里的每一行)
+			object.index=每个的索引
+			object.item=data数组里的每一行
 			功能： 元素 <div class="app-myapp fl ${bgcolor}"> 中的 ${bgcolor}被替换为 odd 或 even
 			*/
 			return  {
 	                    "bgcolor": object.index%2==0?"odd":"even" ,
-	                    "title"  : "<i style='color:#f00;font-size:14px;'>"+object.item.title+"</i>" ,
-	                    "numbers.app.count" : parseInt(Math.random()*100)
+	                    "title"  : "<i>"+object.item.title+"</i>" ,
+	                    "numbers.app.count" : object.item.numbers.app.count + "kg"
 	                };
 			/*
 	        return {...}可以自定义页面的字段值
@@ -133,8 +128,22 @@ $("#btn_reLoad").click(function(){
 	});  /*end template*/
 });
 
-$(".app-create").click(function(){
-	alert("Author : wuweiwei");
+/*单击按钮插入数据*/
+$("#btn_insert").click(function(){
+    template.repeat({
+    	type : "insert",
+        repeatElement:$(".app-myapp")[0],
+        data:data,
+    });
+});
+
+/*单击按钮追加数据*/
+$("#btn_append").click(function(){
+    template.repeat({
+    	type : "append",
+        repeatElement:$(".app-myapp")[0],
+        data:data,
+    });
 });
 </script>
 
