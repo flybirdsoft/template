@@ -50,18 +50,19 @@ var data = [
 
 
     template.repeat({
-        repeatId:".app-myapp",
+        repeatId:".app-myapp",//可以使用 repeatElement:$(".app-myapp")[0],
         data:data,
-        count:3
+        count:3,
+        type:"cover"         //可选择参数 type="cover" 覆盖; type="insert" 加载到现有数据前面; type="append" 加载到现有数据的后面
     });
 
 
 参数说明：
-1.repeatId 是 重复循环出现的元素容器
-
+1.repeatId 是 模板DOM元素
+  repeatElement 是 模板DOM元素
 2.data 是 array
-
 3.count 是 读取的记录个数（参数可选）
+4.type 是 数据载入的方式
 
 
 #代码示例二：
@@ -69,10 +70,10 @@ var data = [
     template.repeat({
         repeatId:".app-myapp",
         data:data,
-	process:function(object){
+	process:function(object){ //动态处理每个记录的某个字段
 		return  {
                     "bgcolor": object.index%2==0?"odd":"even" ,
-                    "title"  : "<i style='color:#f00;font-size:14px;'>"+object.item.title+"</i>" ,
+                    "title"  : "<i>"+object.item.title+"</i>" ,
                     "numbers.app.count" : parseInt(Math.random()*100)
             };
 	}
@@ -86,9 +87,9 @@ process	函数的参数参数object：
 
 	object 是 包含index和item
 	
-	object.index=array中的索引
+	object.index 是 array中的索引
 	
-	object.item=data数组里的每一行
+	object.item 是 data数组里的每一行
 	
         return {...}可以自定义页面的字段值
         
