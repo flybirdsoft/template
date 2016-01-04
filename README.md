@@ -50,19 +50,25 @@ var data = [
 
 
     template.repeat({
-        repeatId:".app-myapp",//可以使用 repeatElement:$(".app-myapp")[0],
+        repeatId:".app-myapp",    //可以使用 repeatElement:$(".app-myapp")[0],
         data:data,
         count:3,
-        type:"cover"         //可选择参数 type="cover" 覆盖; type="insert" 加载到现有数据前面; type="append" 加载到现有数据的后面
+        type:"cover"         
+        //可选择参数 type="cover" 覆盖; type="insert" 加载到现有数据前面; type="append" 加载到现有数据的后面
     });
 
 
 参数说明：
 1.repeatId 是 模板DOM元素
+
   repeatElement 是 模板DOM元素
+  
 2.data 是 array
+
 3.count 是 读取的记录个数（参数可选）
+
 4.type 是 数据载入的方式
+
 
 
 #代码示例二：
