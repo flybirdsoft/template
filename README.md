@@ -60,15 +60,15 @@ var data = [
 
 参数说明：
 
-1.repeatId 是 模板DOM元素
+	1.repeatId 是 模板DOM元素
 
 	repeatElement 是 模板DOM元素
   
-2.data 是 array
+	2.data 是 array
 
-3.count 是 读取的记录个数（参数可选）
+	3.count 是 读取的记录个数（参数可选）
 
-4.type 是 数据载入的方式
+	4.type 是 数据载入的方式
 
 
 
