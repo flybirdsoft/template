@@ -59,9 +59,10 @@ var data = [
 
 
 参数说明：
+
 1.repeatId 是 模板DOM元素
 
-  repeatElement 是 模板DOM元素
+	repeatElement 是 模板DOM元素
   
 2.data 是 array
 
