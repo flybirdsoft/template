@@ -49,7 +49,7 @@ body{
             <div class="app-create-text">新增基础服务</div>
         </div>
 	    <!--模板 begin-->  
-	    <div class="app-myapp fl ${bgcolor}">
+	    <div class="app-myapp fl ${bgcolor}" title="${title}">
 	        <div class="app-myapp-shared">${numbers.app.count}</div>
 	        <div class="app-myapp-photo icons"></div>
 	        <div class="app-myapp-caption">${title}</div>
@@ -97,9 +97,15 @@ data = [
 
 
 template.repeat({
-    repeatElement:$(".app-myapp")[0],
-    data:data,
-    count:3
+    repeatElement : $(".app-myapp")[0],
+    data : data,
+    count : 3,
+    onloadBefore : function(){
+        console.log("load before");
+    },
+    onload : function(){
+        console.log("loaded");
+    }
 });
 
 
