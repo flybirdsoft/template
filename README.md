@@ -18,7 +18,7 @@
         </div>
     </div>
 
-### 代码示例一：
+#### 代码示例一：
 
 
 var data = [
@@ -73,7 +73,7 @@ var data = [
 
 
 
-### 代码示例二：
+#### 代码示例二：
 
     template.repeat({
         repeatId:".app-myapp",
@@ -108,6 +108,84 @@ process	函数的参数参数object：
         bgcolor,title,numbers.app.count就是页面上的${bgcolor},${title},${numbers.app.count}
         
 	
+##  
+## template modelView对象
+
+
+    var modelView = template.repeat({
+        repeatElement : $(".app-myapp")[0],
+        data : data,
+        type : "cover",
+        onloadBefore : function(){
+            console.log("load before");
+        },
+        onload : function(){
+            console.log("loaded");
+        }
+    });
 
 
 
+#### 更新数据
+
+    modelView.update({
+        "numbers.app.count":"300",
+        "title":"我的应用3"
+        },
+        {
+            title:"xxx",
+            url:"WUI",
+            numbers:
+            {
+                app:{count:"00"}
+            }
+        },
+        function(isOK){
+            //isOK=true表示更新成功
+            alert(isOK);
+        }
+    );
+
+
+#### 删除数据
+
+    modelView.delete({
+        "numbers.app.count":"500",
+        "title":"我的应用2"
+        },
+        function(){
+            alert('删除成功');
+        }
+    );
+
+
+#### 添加数据
+
+    modelView.add({
+            title:"newTitle",
+            url:"www.new.com",
+            numbers:
+            {
+                app:{count:"90"}
+            }
+        },
+        function(){
+            alert('添加成功');
+        }
+    );
+
+
+#### 插入数据
+
+    modelView.insert(1,{
+            title:"newTitle",
+            url:"www.new.com",
+            numbers:
+            {
+                app:{count:"90"}
+            }
+        },
+        function(){
+            alert('添加成功');
+        }
+    );
