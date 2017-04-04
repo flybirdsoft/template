@@ -1,4 +1,5 @@
 # template
+## template.repeat
 名称：前端模板引擎
 
 作者：邬畏畏
@@ -17,7 +18,7 @@
         </div>
     </div>
 
-##代码示例一：
+### 代码示例一：
 
 
 var data = [
@@ -72,7 +73,7 @@ var data = [
 
 
 
-##代码示例二：
+### 代码示例二：
 
     template.repeat({
         repeatId:".app-myapp",
