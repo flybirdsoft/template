@@ -4,8 +4,7 @@
 
 作者：邬畏畏
 
-功能：把JSON数据渲染到页面。
-      此模板实现的功能比较简单，希望大家多提建议。
+功能：提供前端model和view解决方案。
 
 页面HTML：
 
@@ -51,7 +50,7 @@ var data = [
 
 
     template.repeat({
-        repeatId:".app-myapp",    //可以使用 repeatElement:$(".app-myapp")[0],
+        repeatElement:$(".app-myapp")[0],
         data:data,
         count:3,
         type:"cover"         
@@ -61,9 +60,7 @@ var data = [
 
 参数说明：
 
-	1.repeatId 是 模板DOM元素
-
-	repeatElement 是 模板DOM元素
+	1.repeatElement 是 模板DOM元素
   
 	2.data 是 array
 
@@ -76,7 +73,7 @@ var data = [
 #### 代码示例二：
 
     template.repeat({
-        repeatId:".app-myapp",
+        repeatElement:$(".app-myapp")[0],
         data:data,
 	process:function(object){ //动态处理每个记录的某个字段
 		return  {
@@ -145,9 +142,9 @@ process	函数的参数参数object：
             alert(isOK);
         }
     );
-    
-  参数说明：参数1是匹配更新的条件;参数2是要更新的记录;参数3回调函数isOK为boolean,表示是否更新成功;
-  注意：update()不实现ajax操作，即：只删除DOM元素。
+
+  参数说明：“参数1”是匹配更新的条件;“参数2”是要更新的记录;“参数3”回调函数isOK为boolean,表示是否更新成功;
+  注意：update()不实现ajax操作，只操作DOM元素。
     
 #### 删除数据
 
