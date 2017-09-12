@@ -8,12 +8,12 @@
 
 页面HTML：
 
-    <div class="app-myapp fl ${bgcolor}">
-        <div class="app-myapp-shared">${numbers.app.count}</div>
+    <div class="app-myapp fl {{bgcolor}}">
+        <div class="app-myapp-shared">{{numbers.app.count}}</div>
         <div class="app-myapp-photo icons"></div>
-        <div class="app-myapp-caption">${title}</div>
+        <div class="app-myapp-caption">{{title}}</div>
         <div class="app-myapp-op">
-            <a target="_blank" href="http://${url}">${url}</a>
+            <a target="_blank" href="http://{{url}}">{{url}}</a>
         </div>
     </div>
 
@@ -157,7 +157,13 @@ process	函数的参数参数object：
         }
     );
 
+#### 删除索引出的数据
 
+    modelView.deleteIndex(0,
+        function(){
+            alert('删除成功');
+        }
+    );
 #### 添加数据
 
     modelView.add({
@@ -188,3 +194,10 @@ process	函数的参数参数object：
             alert('添加成功');
         }
     );
+
+#### 修改数据自动绑定到页面
+modelView.autoReview = true;   //autoReview=true时,当修改数据自动更新数据到页面
+modelView.data[0].title = "this is your app";
+modelView.data[0].url = "url";
+modelView.data[0].numbers.app.count = "-11";
+//modelView.refresh(); //如果autoReview=fase,需要调用refresh()方法更新数据到页面
