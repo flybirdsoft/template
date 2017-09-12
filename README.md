@@ -197,7 +197,12 @@ process	函数的参数参数object：
 
 #### 修改数据自动绑定到页面
 modelView.autoReview = true;   //autoReview=true时,当修改数据自动更新数据到页面
+
 modelView.data[0].title = "this is your app";
+
 modelView.data[0].url = "url";
+
 modelView.data[0].numbers.app.count = "-11";
+
 //modelView.refresh(); //如果autoReview=fase,需要调用refresh()方法更新数据到页面
+
